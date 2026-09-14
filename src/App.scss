@@ -1,1 +1,12 @@
 // not empty
+body {
+  background-color: #0F1121;
+  color: #F1F2F9;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: url('/public/fonts/Mont-Regular.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+}
