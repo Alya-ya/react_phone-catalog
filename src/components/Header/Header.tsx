@@ -9,93 +9,95 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.header__left}>
-        <NavLink to="/" className={styles.header__logo_link}>
-          <img
-            className={styles.header__logo}
-            src="/img/icons/logo.png"
-            alt="Logo"
-          />
-        </NavLink>
+      <div className={styles.header__container}>
+        <div className={styles.header__left}>
+          <NavLink to="/">
+            <img
+              className={styles.header__logo}
+              src="/img/icons/logo.png"
+              alt="Logo"
+            />
+          </NavLink>
 
-        <nav className={styles.header__links}>
+          <nav className={styles.header__links}>
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                classNames(styles.header__link, {
+                  [styles['is-active']]: isActive,
+                })
+              }
+            >
+              HOME
+            </NavLink>
+
+            <NavLink
+              to="/phones"
+              className={({ isActive }) =>
+                classNames(styles.header__link, {
+                  [styles['is-active']]: isActive,
+                })
+              }
+            >
+              PHONES
+            </NavLink>
+
+            <NavLink
+              to="/tablets"
+              className={({ isActive }) =>
+                classNames(styles.header__link, {
+                  [styles['is-active']]: isActive,
+                })
+              }
+            >
+              TABLETS
+            </NavLink>
+
+            <NavLink
+              to="/accessories"
+              className={({ isActive }) =>
+                classNames(styles.header__link, {
+                  [styles['is-active']]: isActive,
+                })
+              }
+            >
+              ACCESSORIES
+            </NavLink>
+          </nav>
+        </div>
+
+        <div className={styles.header__right}>
           <NavLink
-            to="/"
-            end
+            to="/favorites"
             className={({ isActive }) =>
-              classNames(styles.header__link, {
+              classNames(styles.header__favorite, {
                 [styles['is-active']]: isActive,
               })
             }
           >
-            HOME
+            <img src="/img/icons/like.png" alt="Like" />
           </NavLink>
 
           <NavLink
-            to="/phones"
+            to="/cart"
             className={({ isActive }) =>
-              classNames(styles.header__link, {
+              classNames(styles.header__cart, {
                 [styles['is-active']]: isActive,
               })
             }
           >
-            PHONES
+            <img src="/img/icons/basket.png" alt="Basket" />
           </NavLink>
 
-          <NavLink
-            to="/tablets"
-            className={({ isActive }) =>
-              classNames(styles.header__link, {
-                [styles['is-active']]: isActive,
-              })
-            }
+          <button
+            type="button"
+            className={styles.header__menu}
+            onClick={() => setMenuOpen(true)}
           >
-            TABLETS
-          </NavLink>
-
-          <NavLink
-            to="/accessories"
-            className={({ isActive }) =>
-              classNames(styles.header__link, {
-                [styles['is-active']]: isActive,
-              })
-            }
-          >
-            ACCESSORIES
-          </NavLink>
-        </nav>
-      </div>
-
-      <div className={styles.header__right}>
-        <NavLink
-          to="/favorites"
-          className={({ isActive }) =>
-            classNames(styles.header__favorite, {
-              [styles['is-active']]: isActive,
-            })
-          }
-        >
-          <img src="/img/icons/like.png" alt="Like" />
-        </NavLink>
-
-        <NavLink
-          to="/cart"
-          className={({ isActive }) =>
-            classNames(styles.header__cart, {
-              [styles['is-active']]: isActive,
-            })
-          }
-        >
-          <img src="/img/icons/basket.png" alt="Basket" />
-        </NavLink>
-
-        <button
-          type="button"
-          className={styles.header__menu}
-          onClick={() => setMenuOpen(true)}
-        >
-          <img src="/img/icons/menu.png" alt="Menu" />
-        </button>
+            <img src="/img/icons/menu.png" alt="Menu" />
+          </button>
+        </div>
       </div>
 
       <aside
@@ -105,11 +107,7 @@ export const Header = () => {
       >
         <div className={styles.menu__container}>
           <div className={styles.menu__top}>
-            <NavLink
-              to="/"
-              className={styles.menu__logo_link}
-              onClick={closeMenu}
-            >
+            <NavLink to="/" onClick={closeMenu}>
               <img
                 src="/img/icons/logo.png"
                 alt="Logo"
