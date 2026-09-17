@@ -14,7 +14,7 @@ export const Footer = () => {
         <NavLink to="/">
           <img
             className={styles.footer__logo}
-            src="/img/icons/logo.png"
+            src="/img/icons/logo.svg"
             alt="Icon"
           />
         </NavLink>
@@ -46,7 +46,7 @@ export const Footer = () => {
             Back to top
             <img
               className={styles.footer__back_to_top_icon}
-              src="/img/icons/button.png"
+              src="/img/icons/button.svg"
               alt="Button"
             />
           </button>

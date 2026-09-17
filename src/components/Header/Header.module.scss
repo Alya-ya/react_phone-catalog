@@ -126,6 +126,7 @@
   &__favorite,
   &__cart {
     display: none;
+    position: relative;
 
     @include onTablet {
       display: flex;
@@ -226,10 +227,10 @@
 
 
   &__logo {
-    display: flex;
-    align-items: center;
+    display: block;
     width: 64px;
     height: 22px;
+    object-fit: contain;
   }
 
   &__close {
@@ -320,6 +321,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    position: relative;
 
     @include hover(background-color, rgba(#3b3e4a, 0.4));
 
@@ -336,4 +338,36 @@
   &__favorite {
     box-shadow: 1px 0 0 #3b3e4a;
   }
+}
+
+.header__badge,
+.menu__badge {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 14px;
+  height: 14px;
+  padding: 0 2px;
+  border-radius: 50%;
+  border: 1px solid $main-background-color;
+
+  background-color:$main-text-color-red;
+  color: #ffffff;
+
+  font-family: $main-text-font-family;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.menu__badge {
+  top: 16px;
+  right: calc(50% - 18px);
 }

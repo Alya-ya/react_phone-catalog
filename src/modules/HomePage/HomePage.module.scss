@@ -1,0 +1,26 @@
+@use '../../utils/mixins.scss'as *;
+@use '../../utils/variables.scss'as *;
+
+.homePage {
+  padding-bottom: 64px;
+
+  @include onDesktop {
+    padding-bottom: 80px;
+  }
+
+  &__section {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
