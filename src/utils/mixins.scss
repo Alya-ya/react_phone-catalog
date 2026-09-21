@@ -34,7 +34,7 @@
   }
 }
 
-// Миксин для масштабирования на 10% с плавным переходом
+// Mixin for 10% scaling with a smooth transition
 @mixin imageHoverScale {
   transition: transform 0.3s ease;
 

@@ -6,32 +6,67 @@ import { useFavorites } from '../../context/FavoritesContext';
 
 import styles from './ProductCard.module.scss';
 
+import classNames from 'classnames';
+
 type Props = {
   product: Product;
 };
 
 export const ProductCard: React.FC<Props> = ({ product }) => {
-  const { name, price, fullPrice, screen, capacity, ram, image, itemId, id } =
-    product;
-  const hasDiscount = price !== fullPrice;
-  const { cart, addToCart, removeFromCart } = useCart();
+  const { name, price, fullPrice, screen, capacity, ram, itemId, id } = product;
+  const hasDiscount = price < fullPrice;
+  const { cart, addToCart } = useCart();
   const isInCart = cart.some(item => item.id === id);
 
   const handleCartClick = () => {
     if (isInCart) {
-      removeFromCart(id);
-    } else {
-      addToCart(product);
+      return;
     }
+
+    addToCart(product);
   };
 
   const { favorites, toggleFavorite } = useFavorites();
   const isFavorite = favorites.includes(id);
 
+  //scale images of specific products according to the layout requirements
+  const getProductImageStyle = (productName: string) => {
+    if (productName.includes('Apple iPad Mini (6th Gen) 64GB Starlight')) {
+      return { transform: 'scale(1.3)' };
+    }
+
+    if (productName.includes('Apple iPad Mini (6th Gen) 256GB Starlight')) {
+      return { transform: 'scale(1.3)' };
+    }
+
+    if (productName.includes('Apple iPad Mini (5th Gen)')) {
+      return { transform: 'scale(1.5)' };
+    }
+
+    if (productName.includes('Apple iPhone 14 Pro')) {
+      return { transform: 'scale(1.2)' };
+    }
+
+    if (productName.includes('Apple iPad Pro 11')) {
+      return { transform: 'scale(1.1)' };
+    }
+
+    if (productName.includes('Apple iPad Mini')) {
+      return { transform: 'scale(1.6)' };
+    }
+
+    return undefined;
+  };
+
   return (
     <div className={styles.card}>
       <Link to={`/product/${itemId}`} className={styles.card__imageContainer}>
-        <img src={image} alt={name} className={styles.card__image} />
+        <img
+          src={product.image}
+          alt={product.name}
+          className={styles.card__image}
+          style={getProductImageStyle(product.name)}
+        />
       </Link>
 
       <Link to={`/product/${itemId}`} className={styles.card__title}>
@@ -65,18 +100,18 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       <div className={styles.card__actions}>
         <button
           type="button"
-          className={`${styles.card__btnCart} ${
-            isInCart ? styles['card__btnCart--added'] : ''
-          }`}
+          className={classNames(styles.card__btnCart, {
+            [styles['card__btnCart--added']]: isInCart,
+          })}
           onClick={handleCartClick}
         >
-          {isInCart ? 'Added' : 'Add to cart'}
+          {isInCart ? 'Added to cart' : 'Add to cart'}
         </button>
         <button
           type="button"
-          className={`${styles.card__btnFavorite} ${
-            isFavorite ? styles['card__btnFavorite--active'] : ''
-          }`}
+          className={classNames(styles.card__btnFavorite, {
+            [styles['card__btnFavorite--active']]: isFavorite,
+          })}
           onClick={() => toggleFavorite(id)}
         >
           <img

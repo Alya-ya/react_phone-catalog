@@ -13,7 +13,7 @@ export const HomePage: React.FC = () => {
   const newProducts = [...products].sort((a, b) => b.year - a.year);
 
   const hotPriceProducts = [...products]
-    .filter(p => p.fullPrice && p.price)
+    .filter(p => p.fullPrice && p.price && p.price < p.fullPrice)
     .sort((a, b) => b.fullPrice - b.price - (a.fullPrice - a.price));
 
   return (
