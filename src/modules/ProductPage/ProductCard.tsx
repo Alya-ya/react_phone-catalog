@@ -15,12 +15,12 @@ type Props = {
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const { name, price, fullPrice, screen, capacity, ram, itemId, id } = product;
   const hasDiscount = price < fullPrice;
-  const { cart, addToCart } = useCart();
+  const { cart, addToCart, removeFromCart } = useCart();
   const isInCart = cart.some(item => item.id === id);
 
   const handleCartClick = () => {
     if (isInCart) {
-      return;
+      return removeFromCart(id);
     }
 
     addToCart(product);
@@ -62,7 +62,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     <div className={styles.card}>
       <Link to={`/product/${itemId}`} className={styles.card__imageContainer}>
         <img
-          src={product.image}
+          src={`/${product.image}`}
           alt={product.name}
           className={styles.card__image}
           style={getProductImageStyle(product.name)}

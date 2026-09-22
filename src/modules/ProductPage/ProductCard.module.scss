@@ -71,6 +71,10 @@
     line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
+    &:hover {
+      color: $main-color-violet;
+    }
   }
 
   &__priceBlock {
@@ -143,7 +147,7 @@
   &__btnCart {
     border: none;
     color: $hover-text-color;
-    background-color: $main-button-color;
+    background-color: $main-color-violet;
     height: 40px;
     font-weight: 700;
     font-size: 14px;
@@ -152,9 +156,12 @@
     flex: 1;
     cursor: pointer;
 
+    &:hover {
+      background-color: $main-button-hover-color;
+    }
 
     &--added {
-      background-color: $main-button-gray-color;
+      background-color: $main-button-green-color;
     }
   }
 
@@ -166,6 +173,9 @@
     background-color: $main-button-gray-color;
     cursor: pointer;
 
+    &:hover {
+      background-color: $color-pictures-light-grey;
+    }
 
     &--active {
       background-color: transparent;

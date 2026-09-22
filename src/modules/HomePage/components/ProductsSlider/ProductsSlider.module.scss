@@ -21,10 +21,7 @@
   }
 
   @include onDesktop {
-    --card-width: 272px;
-    max-width: calc((4 * var(--card-width)) + (3 * var(--card-gap)) + 64px);
-    padding-left: 0;
-
+    @include contentMaxWidth;
   }
 
   &__header {
@@ -34,8 +31,6 @@
     margin-bottom: 24px;
 
     grid-column: 1 / -1;
-
-
   }
 
   &__title {
@@ -54,8 +49,9 @@
   &__buttons {
     display: flex;
     gap: 16px;
+    padding-right: 16px;
 
-        @include onTablet {
+    @include onTablet {
       padding-right: 24px;
     }
 
@@ -75,7 +71,9 @@
     cursor: pointer;
     transition: opacity 0.2s;
 
-
+    &:hover {
+      background-color: $color-pictures-light-grey;
+    }
 
     &:disabled {
       opacity: 0.5;
@@ -89,15 +87,11 @@
     width: 100%;
 
     grid-column: 1 / -1;
-
   }
 
   &__track {
     display: flex;
     gap: var(--card-gap);
     transition: transform 0.3s ease-in-out;
-
   }
-
-
 }

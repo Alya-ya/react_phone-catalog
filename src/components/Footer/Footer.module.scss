@@ -126,8 +126,22 @@
   }
 
   &__back_to_top_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 32px;
+    width: 32px;
     cursor: pointer;
+    background-color: $main-button-gray-color;
     @include imageHoverScale;
+
+    &:hover {
+      background-color: $color-pictures-light-grey;
+    }
+
+    &__img {
+      height: 16px;
+      width: 16px;
+    }
   }
 }

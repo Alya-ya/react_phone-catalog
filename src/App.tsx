@@ -6,6 +6,8 @@ import { Header } from './components/Header';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
 import { HomePage } from './modules/HomePage/HomePage';
+import { NotFoundPage } from './modules/NotFoundPage';
+import { ProductDetailsPage } from './modules/ProductDetailsPage';
 
 export const App = () => (
   <CartProvider>
@@ -19,25 +21,26 @@ export const App = () => (
             path="/phones"
             element={<h1 className="title">ProductsPage</h1>}
           />
+
           <Route
             path="/tablets"
             element={<h1 className="title">ProductsPage</h1>}
           />
+
           <Route
             path="/accessories"
             element={<h1 className="title">ProductsPage</h1>}
           />
-          <Route
-            path="/product/:productId"
-            element={<h1 className="title">ProductDetailsPage</h1>}
-          />
+          <Route path="/product/:productId" element={<ProductDetailsPage />} />
+
           <Route
             path="/favorites"
             element={<h1 className="title">FavoritesPage</h1>}
           />
+
           <Route path="/cart" element={<h1 className="title">CartPage</h1>} />
 
-          <Route path="*" element={<h1 className="title">NotFoundPage</h1>} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
 

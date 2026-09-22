@@ -8,7 +8,7 @@ import productsData from '../../api/products.json';
 import { Product } from '../../types/Product';
 
 export const HomePage: React.FC = () => {
-  const products: Product[] = productsData;
+  const products: Product[] = productsData as unknown as Product[];
 
   const newProducts = [...products].sort((a, b) => b.year - a.year);
 
@@ -29,7 +29,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       <section className={styles.homePage__section}>
-        <ShopByCategory />
+        <ShopByCategory products={products} />
       </section>
 
       <section className={styles.homePage__section}>

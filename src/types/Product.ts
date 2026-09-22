@@ -5,8 +5,8 @@ export type Product = {
   name: string;
   fullPrice: number;
   price: number;
-  screen: string;
-  capacity: string;
+  screen?: string;
+  capacity?: string;
   color: string;
   ram: string;
   year: number;
