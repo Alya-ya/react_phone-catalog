@@ -52,6 +52,10 @@
     &__button {
       display: none;
 
+      &:hover {
+        background-color: $color-pictures-light-grey;
+      }
+
       @include onTablet {
         display: flex;
         flex-direction: column;
@@ -99,6 +103,10 @@
 
       bottom: 30px;
       left: 20px;
+
+      &:hover {
+        background-color: $main-button-green-color;
+      }
 
       @include onTablet {
         font-size: 24px;
