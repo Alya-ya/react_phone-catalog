@@ -37,7 +37,7 @@
     font-weight: 800;
     font-size: 22px;
     line-height: 140%;
-    color: $hover-text-color;
+    color: $white-text-color;
 
     @include onTablet {
       font-size: 32px;
@@ -79,6 +79,10 @@
       opacity: 0.5;
       cursor: default;
       background-color: transparent;
+    }
+
+    img {
+      filter: brightness(0) invert(1);
     }
   }
 

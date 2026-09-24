@@ -6,9 +6,14 @@ import { useState, useEffect } from 'react';
 type Props = {
   title: string;
   products: Product[];
+  showFullPrice?: boolean;
 };
 
-export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
+export const ProductsSlider: React.FC<Props> = ({
+  title,
+  products,
+  showFullPrice,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(4);
   const [scrollStep, setScrollStep] = useState(4);
@@ -91,7 +96,11 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
           }}
         >
           {products.map(product => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              showFullPrice={showFullPrice}
+              key={product.id}
+              product={product}
+            />
           ))}
         </div>
       </div>

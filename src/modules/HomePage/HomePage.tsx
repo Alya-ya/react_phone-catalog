@@ -18,10 +18,10 @@ export const HomePage: React.FC = () => {
 
   return (
     <main className={styles.homePage}>
-      <h1 className="is-hidden">Product Catalog</h1>
+      <h1 className={styles.visuallyHidden}>Product Catalog</h1>
 
       <section className={styles.homePage__section}>
-        <PicturesSlider />
+        <PicturesSlider title="Welcome to Nice Gadgets store!" />
       </section>
 
       <section className={styles.homePage__section}>
@@ -33,7 +33,11 @@ export const HomePage: React.FC = () => {
       </section>
 
       <section className={styles.homePage__section}>
-        <ProductsSlider title="Hot prices" products={hotPriceProducts} />
+        <ProductsSlider
+          title="Hot prices"
+          products={hotPriceProducts}
+          showFullPrice={true}
+        />
       </section>
     </main>
   );

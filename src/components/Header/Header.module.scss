@@ -86,7 +86,7 @@
       height: 100%;
       position: relative;
       transition: color 0.3s ease;
-      @include hover(color, $hover-text-color);
+      @include hover(color, $white-text-color);
 
       &::after {
         content: '';
@@ -98,7 +98,7 @@
         width: 100%;
         height: 3px;
 
-        background-color: $hover-text-color;
+        background-color: $white-text-color;
 
         transform-origin: left;
         transform: scaleX(0);
@@ -112,7 +112,7 @@
       }
 
       &.is-active {
-        color: $hover-text-color;
+        color: $white-text-color;
       }
     }
   }
@@ -231,6 +231,8 @@
     width: 64px;
     height: 22px;
     object-fit: contain;
+
+    @include imageHoverScale
   }
 
   &__close {
@@ -278,7 +280,7 @@
     position: relative;
     transition: color 0.3s ease;
 
-    @include hover(color, $hover-text-color);
+    @include hover(color, $white-text-color);
 
     &::after {
       content: '';
@@ -290,7 +292,7 @@
       width: 100%;
       height: 3px;
 
-      background-color: $hover-text-color;
+      background-color: $white-text-color;
 
       transform-origin: left;
       transform: scaleX(0);
@@ -304,7 +306,7 @@
     }
 
     &.is-active {
-      color: $hover-text-color;
+      color: $white-text-color;
     }
   }
 
@@ -331,7 +333,7 @@
     }
 
     &.is-active {
-      box-shadow: inset 0 -3px 0 $hover-text-color;
+      box-shadow: inset 0 -3px 0 $white-text-color;
     }
   }
 
@@ -356,7 +358,7 @@
   border-radius: 50%;
   border: 1px solid $main-background-color;
 
-  background-color:$main-text-color-red;
+  background-color: $main-text-color-red;
   color: #ffffff;
 
   font-family: $main-text-font-family;

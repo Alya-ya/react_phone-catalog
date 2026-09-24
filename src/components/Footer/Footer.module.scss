@@ -77,10 +77,10 @@
     cursor: pointer;
 
     transition: color 0.3s ease;
-    @include hover(color, $hover-text-color);
+    @include hover(color, $white-text-color);
 
     &.is-active {
-      color: $hover-text-color;
+      color: $white-text-color;
     }
   }
 
@@ -121,7 +121,7 @@
     align-items: center;
     cursor: pointer;
 
-    @include hover(color, $hover-text-color);
+    @include hover(color, $white-text-color);
 
   }
 

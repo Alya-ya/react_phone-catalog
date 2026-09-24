@@ -10,11 +10,11 @@ import classNames from 'classnames';
 
 type Props = {
   product: Product;
+  showFullPrice?: boolean;
 };
 
-export const ProductCard: React.FC<Props> = ({ product }) => {
+export const ProductCard: React.FC<Props> = ({ product, showFullPrice }) => {
   const { name, price, fullPrice, screen, capacity, ram, itemId, id } = product;
-  const hasDiscount = price < fullPrice;
   const { cart, addToCart, removeFromCart } = useCart();
   const isInCart = cart.some(item => item.id === id);
 
@@ -75,7 +75,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
 
       <div className={styles.card__priceBlock}>
         <span className={styles.card__price}>${price}</span>
-        {hasDiscount && (
+        {showFullPrice && price < fullPrice && (
           <span className={styles.card__fullPrice}>${fullPrice}</span>
         )}
       </div>

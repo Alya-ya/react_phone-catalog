@@ -61,7 +61,7 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 21px;
-    color: $hover-text-color;
+    color: $white-text-color;
     text-decoration: none;
     min-height: 42px;
     margin-bottom: 8px;
@@ -88,7 +88,7 @@
     font-weight: 800;
     font-size: 22px;
     line-height: 140%;
-    color: $hover-text-color;
+    color: $white-text-color;
   }
 
   &__fullPrice {
@@ -146,7 +146,7 @@
 
   &__btnCart {
     border: none;
-    color: $hover-text-color;
+    color: $white-text-color;
     background-color: $main-color-violet;
     height: 40px;
     font-weight: 700;

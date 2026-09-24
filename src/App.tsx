@@ -8,6 +8,7 @@ import { CartProvider } from './context/CartContext';
 import { HomePage } from './modules/HomePage/HomePage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
+import { ProductsPage } from './modules/ProductsPage';
 
 export const App = () => (
   <CartProvider>
@@ -17,20 +18,12 @@ export const App = () => (
       <div>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/phones"
-            element={<h1 className="title">ProductsPage</h1>}
-          />
+          <Route path="/phones" element={<ProductsPage />} />
 
-          <Route
-            path="/tablets"
-            element={<h1 className="title">ProductsPage</h1>}
-          />
+          <Route path="/tablets" element={<ProductsPage />} />
 
-          <Route
-            path="/accessories"
-            element={<h1 className="title">ProductsPage</h1>}
-          />
+          <Route path="/accessories" element={<ProductsPage />} />
+
           <Route path="/product/:productId" element={<ProductDetailsPage />} />
 
           <Route
