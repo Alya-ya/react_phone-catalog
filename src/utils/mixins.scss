@@ -18,10 +18,12 @@
 
   @include onTablet {
     max-width: $tablet-min-width;
+    margin: 0 auto;
   }
 
   @include onDesktop {
     max-width: $desktop-min-width;
+    margin: 0 auto;
   }
 }
 

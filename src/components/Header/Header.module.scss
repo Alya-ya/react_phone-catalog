@@ -28,15 +28,18 @@
     align-items: center;
     padding-inline: 16px;
     height: 100%;
-
+    margin: 0;
     @include contentMaxWidth;
 
     @include onTablet {
       gap: 32px;
       padding-right: 0;
+          margin: 0;
+
     }
 
     @include onDesktop {
+          margin: 0;
       gap: 64px;
     }
   }

@@ -9,7 +9,6 @@
 
   @include onDesktop {
     @include contentMaxWidth;
-    margin: 0 auto;
   }
 
   &__title {

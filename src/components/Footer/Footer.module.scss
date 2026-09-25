@@ -2,7 +2,7 @@
 @use '../../utils/variables.scss'as *;
 
 .footer {
-  padding: 2rem 1rem;
+  padding: 32px 16px;
   box-sizing: border-box;
   margin: 0;
   display: block;
@@ -11,13 +11,30 @@
 
 
   &__container {
-    margin: 0 auto;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-
-    @include contentMaxWidth;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
 
     @include pageGrid;
+
+    @include onTablet {
+      flex-direction: row;
+      padding-left: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      padding-right: 16px;
+    }
+
+    @include onDesktop{
+      padding-right: 0;
+      padding-left: 8px;
+    }
   }
 
   &__logo {
