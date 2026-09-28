@@ -74,12 +74,12 @@
   &__empty {
     text-align: center;
     font-family: $main-text-font-family;
-    font-weight: 800;
-    font-size: 32px;
+    font-weight: 600;
+    font-size: 23px;
     line-height: 41px;
 
     @include onTablet {
-      font-size: 48px;
+        font-size: 34px;
       line-height: 56px;
     }
   }

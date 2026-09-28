@@ -1,0 +1,140 @@
+@use '../../utils/mixins.scss'as *;
+@use '../../utils/variables.scss'as *;
+
+.cart_item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: auto;
+  background-color: $grey-background-color;
+  padding: 16px;
+  box-sizing: border-box;
+
+
+  @include onTablet {
+    padding: 24px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__context {
+    display: flex;
+
+    align-items: center;
+
+
+    &__button {
+      display: flex;
+      border: none;
+      padding: 0;
+      background: none;
+      width: 16px;
+      height: 16px;
+      margin: 0 23px 0 0;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    &__img_product {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    &__text_title {
+      font-family: $main-text-font-family;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: $white-text-color;
+      padding-left: 23px;
+      margin: 0;
+
+      flex: 1;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    padding-top: 23px;
+
+    @include onTablet {
+      margin-left: auto;
+    }
+
+    &__minus {
+      border: none;
+      padding: 0;
+      background: none;
+      width: 32px;
+      height: 32px;
+      border: 1px solid $gray-text-color;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-pictures-light-grey;
+      }
+
+      &__img {
+        width: 16px;
+        height: 16px;
+        padding: 8px 7px;
+      }
+
+      &__img_disabled {
+        filter: brightness(0) saturate(100%) invert(47%) sepia(6%) saturate(500%) hue-rotate(190deg) brightness(90%) contrast(90%);
+      }
+    }
+
+    &__plus {
+      border: none;
+      padding: 0;
+      background: none;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      background-color: $main-button-gray-color;
+
+      &:hover {
+        background-color: $color-pictures-light-grey;
+      }
+
+      &__img {
+        width: 16px;
+        height: 16px;
+        padding: 8px;
+      }
+    }
+
+    &__text {
+      display: flex;
+      padding: 0 13px;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      font-family: $main-text-font-family;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    &__title_price {
+      font-family: $main-text-font-family;
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-right: 0;
+      margin-left: auto;
+
+      @include onTablet {
+        margin-left: 53px;
+      }
+    }
+  }
+}

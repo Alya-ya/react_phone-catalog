@@ -10,6 +10,8 @@ import { NotFoundPage } from './modules/NotFoundPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
 import { ProductsPage } from './modules/ProductsPage';
 import { FavoritesPage } from './modules/FavoritesPage';
+import { CartPage } from './modules/CartPage/CartPage';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export const App = () => (
   <CartProvider>
@@ -17,6 +19,7 @@ export const App = () => (
       <Header />
 
       <div>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/phones" element={<ProductsPage />} />
@@ -29,7 +32,7 @@ export const App = () => (
 
           <Route path="/favorites" element={<FavoritesPage />} />
 
-          <Route path="/cart" element={<h1 className="title">CartPage</h1>} />
+          <Route path="/cart" element={<CartPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
