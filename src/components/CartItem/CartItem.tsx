@@ -1,6 +1,7 @@
 import styles from './CartItem.module.scss';
 import { CartItem as CartItemType, useCart } from '../../context/CartContext';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 type Props = {
   item: CartItemType;
@@ -20,15 +21,19 @@ export const CartItem: React.FC<Props> = ({ item }) => {
           <img src="/img/icons/grey_close.svg" alt="Remove" />
         </button>
 
-        <img
-          className={styles.cart_item__context__img_product}
-          src={item.product.image}
-          alt={item.product.name}
-        />
-
-        <h2 className={styles.cart_item__context__text_title}>
-          {item.product.name}
-        </h2>
+        <Link
+          to={`/product/${item.product.itemId}`}
+          className={styles.cart_item__context__link}
+        >
+          <img
+            className={styles.cart_item__context__img_product}
+            src={item.product.image}
+            alt={item.product.name}
+          />
+          <h2 className={styles.cart_item__context__text_title}>
+            {item.product.name}
+          </h2>
+        </Link>
       </div>
 
       <div className={styles.cart_item__buttons}>

@@ -6,10 +6,15 @@ export type Product = {
   fullPrice: number;
   price: number;
   screen?: string;
+  resolution?: string;
+  processor?: string;
   capacity?: string;
   color: string;
   ram: string;
   year: number;
   image: string;
   phoneId?: string;
+  camera?: string;
+  zoom?: string;
+  cell?: string[];
 };
