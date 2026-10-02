@@ -43,8 +43,9 @@
       color: $main-text-color;
       margin: 0;
       padding-left: 4px;
+      transition: color $effectDuration;
 
-      &:hover{
+      &:hover {
         color: $white-text-color;
       }
     }
@@ -169,6 +170,7 @@
         justify-content: center;
         width: 100%;
         cursor: pointer;
+        transition: background-color $effectDuration;
 
         &:hover {
           background-color: $main-button-hover-color;

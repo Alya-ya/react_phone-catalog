@@ -50,6 +50,7 @@
 
     &__button {
       display: none;
+      transition: background-color $effectDuration;
 
       &:hover {
         background-color: $color-pictures-light-grey;
@@ -102,6 +103,7 @@
 
       bottom: 30px;
       left: 20px;
+      transition: background-color $effectDuration;
 
       &:hover {
         background-color: $main-button-green-color;

@@ -1,9 +1,8 @@
-//import styles from './ProductActions.module.scss';
+import styles from './ProductActions.module.scss';
 import classNames from 'classnames';
 import { Product } from '../../../../types/Product';
 import { useCart } from '../../../../context/CartContext';
 import { useFavorites } from '../../../../context/FavoritesContext';
-import styles from '../../ProductDetailsPage.module.scss';
 
 type ProductActionsProps = {
   product: Product;
@@ -16,7 +15,9 @@ export const ProductActions = ({ product }: ProductActionsProps) => {
 
   const handleCartClick = () => {
     if (isInCart) {
-      return removeFromCart(product.id);
+      removeFromCart(product.id);
+
+      return;
     }
 
     addToCart(product);
@@ -27,40 +28,50 @@ export const ProductActions = ({ product }: ProductActionsProps) => {
   const isFavorite = favorites.includes(product.id);
 
   return (
-    <div>
-      {product.price < product.fullPrice ? (
-        <>
-          <p>${product.price}</p>
-          <p>${product.fullPrice}</p>
-        </>
-      ) : (
-        <p>${product.price}</p>
-      )}
+    <section className={styles.product_actions}>
+      <div className={styles.product_actions__price_container}>
+        {product.price < product.fullPrice ? (
+          <>
+            <p className={styles.product_actions__price_container__price}>
+              ${product.price}
+            </p>
+            <p className={styles.product_actions__price_container__full_price}>
+              ${product.fullPrice}
+            </p>
+          </>
+        ) : (
+          <p className={styles.product_actions__price_container__price}>
+            ${product.price}
+          </p>
+        )}
+      </div>
 
-      <button
-        type="button"
-        className={classNames(styles.card__btnCart, {
-          [styles['card__btnCart--added']]: isInCart,
-        })}
-        onClick={handleCartClick}
-      >
-        {isInCart ? 'Added to cart' : 'Add to cart'}
-      </button>
+      <div className={styles.product_actions__actions}>
+        <button
+          type="button"
+          className={classNames(styles.product_actions__btnCart, {
+            [styles['product_actions__btnCart--added']]: isInCart,
+          })}
+          onClick={handleCartClick}
+        >
+          {isInCart ? 'Added to cart' : 'Add to cart'}
+        </button>
 
-      <button
-        type="button"
-        className={classNames(styles.card__btnFavorite, {
-          [styles['card__btnFavorite--active']]: isFavorite,
-        })}
-        onClick={() => toggleFavorite(product.id)}
-      >
-        <img
-          src={
-            isFavorite ? '/img/icons/like-active.svg' : '/img/icons/like.svg'
-          }
-          alt="Like"
-        />
-      </button>
-    </div>
+        <button
+          type="button"
+          className={classNames(styles.product_actions__btnFavorite, {
+            [styles['product_actions__btnFavorite--active']]: isFavorite,
+          })}
+          onClick={() => toggleFavorite(product.id)}
+        >
+          <img
+            src={
+              isFavorite ? '/img/icons/like-active.svg' : '/img/icons/like.svg'
+            }
+            alt="Like"
+          />
+        </button>
+      </div>
+    </section>
   );
 };

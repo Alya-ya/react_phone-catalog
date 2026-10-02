@@ -1,3 +1,4 @@
+import styles from './ProductSpecs.module.scss';
 import { Product } from '../../../../types/Product';
 
 type ProductSpecsProps = {
@@ -6,22 +7,32 @@ type ProductSpecsProps = {
 
 export const ProductSpecs = ({ product }: ProductSpecsProps) => {
   return (
-    <div>
-      <div>
-        <div>
-          <p>Screen</p>
-          <p>{product.screen}</p>
-
-          <p>Resolution</p>
-          <p>{product.resolution}</p>
-
-          <p>Processor</p>
-          <p>{product.processor}</p>
-
-          <p>RAM</p>
-          <p>{product.ram}</p>
-        </div>
+    <section className={styles.product_specs}>
+      <div className={styles.product_specs__container}>
+        <p className={styles.product_specs__container__title}>Screen</p>
+        <p className={styles.product_specs__container__text}>
+          {product.screen}
+        </p>
       </div>
-    </div>
+
+      <div className={styles.product_specs__container}>
+        <p className={styles.product_specs__container__title}>Resolution</p>
+        <p className={styles.product_specs__container__text}>
+          {product.resolution}
+        </p>
+      </div>
+
+      <div className={styles.product_specs__container}>
+        <p className={styles.product_specs__container__title}>Processor</p>
+        <p className={styles.product_specs__container__text}>
+          {product.processor}
+        </p>
+      </div>
+
+      <div className={styles.product_specs__container}>
+        <p className={styles.product_specs__container__title}>RAM</p>
+        <p className={styles.product_specs__container__text}>{product.ram}</p>
+      </div>
+    </section>
   );
 };

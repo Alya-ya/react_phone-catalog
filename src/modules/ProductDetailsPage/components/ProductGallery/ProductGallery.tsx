@@ -1,4 +1,4 @@
-//import styles from './ProductGallery.module.scss';
+import styles from './ProductGallery.module.scss';
 import { useEffect, useState } from 'react';
 
 type ProductGalleryProps = {
@@ -43,22 +43,32 @@ export const ProductGallery = ({ image, name }: ProductGalleryProps) => {
   }, [image]);
 
   return (
-    <div>
-      <p>{name}</p>
+    <section className={styles.product_gallery}>
+      <p className={styles.product_gallery__title}>{name}</p>
+      <div className={styles.product_gallery__content}>
+        <img
+          className={styles.product_gallery__img}
+          src={selectedImage}
+          alt={name}
+        />
 
-      <div>
-        {productGallery.map(imagePath => (
-          <button
-            type="button"
-            key={imagePath}
-            onClick={() => setSelectedImage(imagePath)}
-          >
-            <img src={imagePath} alt={name} />
-          </button>
-        ))}
+        <div className={styles.product_gallery__container}>
+          {productGallery.map(imagePath => (
+            <button
+              className={`${styles.product_gallery__container__button} ${
+                imagePath === selectedImage
+                  ? styles.product_gallery__container__button__active
+                  : ''
+              }`}
+              type="button"
+              key={imagePath}
+              onClick={() => setSelectedImage(imagePath)}
+            >
+              <img src={imagePath} alt={name} />
+            </button>
+          ))}
+        </div>
       </div>
-
-      <img src={selectedImage} alt={name} />
-    </div>
+    </section>
   );
 };

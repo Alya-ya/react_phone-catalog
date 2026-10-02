@@ -1,4 +1,4 @@
-//import styles from './TechSpecs.module.scss';
+import styles from './TechSpecs.module.scss';
 
 type TechSpec = {
   title: string;
@@ -11,17 +11,19 @@ type TechSpecsProps = {
 
 export const TechSpecs = ({ specs }: TechSpecsProps) => {
   return (
-    <section>
-      <h3>Tech specs</h3>
+    <section className={styles.product_techSpecs}>
+      <h3 className={styles.product_techSpecs__title}>Tech specs</h3>
 
-      <div>
-        {specs.map(spec => (
-          <div key={spec.title}>
-            <h4>{spec.title}</h4>
-            <p>{spec.value}</p>
-          </div>
-        ))}
-      </div>
+      {specs.map(spec => (
+        <div className={styles.product_techSpecs__container} key={spec.title}>
+          <h4 className={styles.product_techSpecs__container__title}>
+            {spec.title}
+          </h4>
+          <p className={styles.product_techSpecs__container__text}>
+            {spec.value}
+          </p>
+        </div>
+      ))}
     </section>
   );
 };

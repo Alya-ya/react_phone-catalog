@@ -32,6 +32,7 @@
       height: 16px;
       margin: 0 23px 0 0;
       cursor: pointer;
+      transition: color $effectDuration;
 
       &:hover {
         filter: brightness(0) invert(1);
@@ -62,6 +63,7 @@
       color: $white-text-color;
       padding-left: 23px;
       margin: 0;
+      transition: color $effectDuration;
 
       &:hover {
         color: $main-button-hover-color;
@@ -85,6 +87,7 @@
       height: 32px;
       border: 1px solid $gray-text-color;
       cursor: pointer;
+      transition: background-color $effectDuration;
 
       &:hover {
         background-color: $color-pictures-light-grey;
@@ -109,6 +112,7 @@
       width: 32px;
       height: 32px;
       background-color: $main-button-gray-color;
+      transition: background-color $effectDuration;
 
       &:hover {
         background-color: $color-pictures-light-grey;

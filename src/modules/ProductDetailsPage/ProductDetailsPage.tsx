@@ -136,33 +136,66 @@ export const ProductDetailsPage = () => {
   const recommendedProducts = getSuggestedProducts(products, product.id);
 
   return (
-    <section>
-      <div>
-        <div>
-          <Link to="/">
-            <img src="/img/icons/home.svg" alt="Home" />
-          </Link>
+    <section className={styles.product_details_page}>
+      <div className={styles.product_details_page__header}>
+        <Link to="/" className={styles.product_details_page__header__link}>
+          <img
+            className={styles.product_details_page__header__home}
+            src="/img/icons/home.svg"
+            alt="Home"
+          />
+        </Link>
 
-          <img src="/img/icons/right.svg" alt="" />
+        <img
+          className={styles.product_details_page__header__right}
+          src="/img/icons/right.svg"
+          alt=""
+        />
 
-          <Link to={`/${product.category}`}>{product.category}</Link>
+        <Link
+          className={styles.product_details_page__header__category}
+          to={`/${product.category}`}
+        >
+          <p className={styles.product_details_page__header__category__text}>
+            {product.category}
+          </p>
+        </Link>
 
-          <img src="/img/icons/right.svg" alt="" />
+        <img
+          className={styles.product_details_page__header__right}
+          src="/img/icons/right.svg"
+          alt=""
+        />
 
-          <p>{product.name}</p>
-        </div>
+        <p className={styles.product_details_page__header__name}>
+          {product.name}
+        </p>
+      </div>
 
-        <div>
-          <button type="button" onClick={() => navigate(-1)}>
-            <img src="/img/icons/left.svg" alt="" />
-          </button>
+      <div className={styles.product_details_page__navigation}>
+        <button
+          className={styles.product_details_page__navigation__button}
+          type="button"
+          onClick={() => navigate(-1)}
+        >
+          <img
+            className={styles.product_details_page__navigation__button__img}
+            src="/img/icons/left.svg"
+            alt=""
+          />
 
-          <p>Back</p>
-        </div>
+          <span
+            className={styles.product_details_page__navigation__button__text}
+          >
+            Back
+          </span>
+        </button>
+      </div>
 
+      <div className={styles.product_details_page__top}>
         <ProductGallery image={product.image} name={product.name} />
 
-        <div>
+        <div className={styles.product_details_page__info}>
           <ProductOptions
             product={productWithDetails}
             productVariants={productVariants}
@@ -174,13 +207,17 @@ export const ProductDetailsPage = () => {
 
           <ProductSpecs product={productWithDetails} />
         </div>
+      </div>
 
+      <div className={styles.product_details_page__top}>
         <ProductAbout description={productDetails.description} />
 
-        <TechSpecs specs={specs} />
-
-        <YouMayAlsoLike products={recommendedProducts} />
+        <div className={styles.product_details_page__info}>
+          <TechSpecs specs={specs} />
+        </div>
       </div>
+
+      <YouMayAlsoLike products={recommendedProducts} />
     </section>
   );
 };

@@ -1,7 +1,7 @@
 @use '../../../../utils/mixins.scss'as *;
 @use '../../../../utils/variables.scss'as *;
 
-.product_techSpecs {
+.product_about {
   display: flex;
   flex-direction: column;
   margin-top: 56px;
@@ -12,7 +12,7 @@
 
   @include onDesktop {
     margin-top: 80px;
-    max-width: 512px;
+    max-width: 560px;
   }
 
   &__title {
@@ -21,32 +21,28 @@
     font-size: 20px;
     margin: 0;
     padding-bottom: 16px;
-    margin-bottom: 30px;
     border-bottom: 1px solid #3b3e4a;
 
     @include onTablet {
       font-weight: 800;
       font-size: 22px;
       line-height: 140%;
-      margin-bottom: 25px;
     }
   }
 
   &__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 8px;
-    padding-bottom: 8px;
+    margin-top: 32px;
 
     &__title {
       font-family: $main-text-font-family;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 21px;
-      color: $main-text-color;
+      font-weight: 700;
+      font-size: 16px;
       margin: 0;
+      padding-bottom: 16px;
+
+      @include onTablet {
+        font-size: 20px;
+      }
     }
 
     &__text {
@@ -54,8 +50,12 @@
       font-weight: 600;
       font-size: 14px;
       line-height: 21px;
-      text-align: right;
       margin: 0;
+      color: $main-grey-color-text;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
     }
   }
 }

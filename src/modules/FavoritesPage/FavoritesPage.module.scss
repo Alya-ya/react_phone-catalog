@@ -16,6 +16,8 @@
     display: flex;
     padding-bottom: 24px;
     gap: 8px;
+    display: flex;
+    align-items: center;
 
     @include onTablet {
       padding-bottom: 40px;
@@ -38,6 +40,7 @@
     font-weight: 700;
     font-size: 12px;
     color: $main-text-color;
+    transform: translateY(1px);
   }
 
   &__title {
@@ -79,7 +82,7 @@
     line-height: 41px;
 
     @include onTablet {
-        font-size: 34px;
+      font-size: 34px;
       line-height: 56px;
     }
   }

@@ -71,6 +71,7 @@
     line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    transition: color $effectDuration;
 
     &:hover {
       color: $main-color-violet;
@@ -155,6 +156,7 @@
 
     flex: 1;
     cursor: pointer;
+    transition: background-color $effectDuration;
 
     &:hover {
       background-color: $main-button-hover-color;
@@ -172,6 +174,7 @@
     flex-shrink: 0;
     background-color: $main-button-gray-color;
     cursor: pointer;
+    transition: background-color $effectDuration;
 
     &:hover {
       background-color: $color-pictures-light-grey;

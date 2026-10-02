@@ -1,4 +1,4 @@
-//import styles from './ProductAbout.module.scss';
+import styles from './ProductAbout.module.scss';
 
 type ProductDescription = {
   title: string;
@@ -10,20 +10,22 @@ type ProductAboutProps = {
 };
 export const ProductAbout = ({ description }: ProductAboutProps) => {
   return (
-    <section>
-      <h3>About</h3>
+    <section className={styles.product_about}>
+      <h3 className={styles.product_about__title}>About</h3>
 
-      <div>
-        {description.map(section => (
-          <div key={section.title}>
-            <h4>{section.title}</h4>
+      {description.map(section => (
+        <div className={styles.product_about__container} key={section.title}>
+          <h4 className={styles.product_about__container__title}>
+            {section.title}
+          </h4>
 
-            {section.text.map(text => (
-              <p key={text}>{text}</p>
-            ))}
-          </div>
-        ))}
-      </div>
+          {section.text.map(text => (
+            <p className={styles.product_about__container__text} key={text}>
+              {text}
+            </p>
+          ))}
+        </div>
+      ))}
     </section>
   );
 };
