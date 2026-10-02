@@ -2,7 +2,7 @@ import styles from './FavoritesPage.module.scss';
 import { Link } from 'react-router-dom';
 import { useFavorites } from '../../context/FavoritesContext';
 import productsData from '../../api/products.json';
-import { ProductCard } from '../ProductPage/ProductCard';
+import { ProductsList } from '../../components/ProductsList';
 
 import { Product } from '../../types/Product';
 
@@ -45,11 +45,7 @@ export const FavoritesPage = () => {
       {favoriteProducts.length === 0 ? (
         <p className={styles.favorites_page__empty}>Your favourites is empty</p>
       ) : (
-        <div className={styles.favorites_page__products}>
-          {favoriteProducts.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <ProductsList products={favoriteProducts} />
       )}
     </section>
   );

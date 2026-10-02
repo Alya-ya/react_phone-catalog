@@ -86,27 +86,4 @@
       line-height: 56px;
     }
   }
-
-  &__products {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: stretch;
-
-    &>* {
-      width: 100%;
-    }
-
-    @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 16px;
-      row-gap: 40px;
-    }
-
-    @include onDesktop {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
 }
