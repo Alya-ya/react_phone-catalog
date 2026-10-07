@@ -14,12 +14,12 @@
     font-size: 30px;
     padding-top: 30px;
 
-    @include onTablet {
+    @include on-tablet {
       padding-top: 40px;
       font-size: 40px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       font-size: 50px;
     }
   }
@@ -31,14 +31,14 @@
     padding-bottom: 20px;
     filter: contrast(0.4);
 
-    @include onTablet {
+    @include on-tablet {
       width: 400px;
       height: 400px;
       padding-top: 40px;
       padding-bottom: 40px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       width: 500px;
       padding-top: 60px;
       padding-bottom: 60px;
@@ -52,13 +52,14 @@
   padding: 24px 16px 0;
   margin: 0;
 
-  @include onTablet {
+  @include on-tablet {
     padding: 24px 24px 0;
   }
 
-  @include onDesktop{
+  @include on-desktop {
     padding: 24px 0;
-        @include contentMaxWidth;
+
+    @include content-max-width;
   }
 
   &__header {
@@ -68,7 +69,7 @@
     align-items: center;
     width: 100%;
 
-    @include onTablet {
+    @include on-tablet {
       padding-bottom: 40px;
     }
 
@@ -169,13 +170,13 @@
     flex-direction: column;
 
 
-    @include onTablet {
+    @include on-tablet {
       flex-direction: row;
       align-items: flex-start;
-          gap: 16px;
+      gap: 16px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       gap: 64px;
     }
   }

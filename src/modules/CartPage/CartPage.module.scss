@@ -7,12 +7,13 @@
   padding: 24px 16px 56px;
   margin: 0;
 
-  @include onTablet {
-    @include contentMaxWidth;
+  @include on-tablet {
+    @include content-max-width;
+
     padding: 40px 0 64px;
   }
 
-  @include onDesktop {
+  @include on-desktop {
     padding: 40px 0 80px;
   }
 
@@ -63,7 +64,7 @@
     letter-spacing: -1%;
     color: $white-text-color;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 48px;
       line-height: 56px;
       padding-top: 16px;
@@ -81,7 +82,7 @@
       font-weight: 600;
       font-size: 23px;
 
-      @include onTablet {
+      @include on-tablet {
         font-size: 34px;
       }
     }
@@ -93,20 +94,20 @@
       padding-bottom: 20px;
       filter: contrast(0.4);
 
-      @include onTablet {
+      @include on-tablet {
         width: 400px;
         height: 400px;
         padding-bottom: 40px;
       }
 
-      @include onDesktop {
+      @include on-desktop {
         padding-bottom: 60px;
       }
     }
   }
 
   &__content {
-    @include onDesktop {
+    @include on-desktop {
       display: flex;
       gap: 16px;
     }
@@ -125,7 +126,7 @@
       margin-top: 32px;
       padding: 24px;
 
-      @include onDesktop {
+      @include on-desktop {
         display: flex;
         flex-direction: column;
         width: 368px;
@@ -155,7 +156,7 @@
         padding-bottom: 16px;
         box-shadow: 0 1px #3b3e4a;
 
-        @include onDesktop {
+        @include on-desktop {
           padding-bottom: 25px;
         }
       }
@@ -176,7 +177,7 @@
           background-color: $main-button-hover-color;
         }
 
-        @include onDesktop {
+        @include on-desktop {
           margin-top: auto;
         }
 

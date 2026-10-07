@@ -15,13 +15,13 @@
   font-family: $main-text-font-family;
   background-color: $background-color-prodact-card;
 
-  @include onTablet {
+  @include on-tablet {
     height: 506px;
     width: var(--card-width, 237px);
     flex-shrink: 0;
   }
 
-  @include onDesktop {
+  @include on-desktop {
     width: var(--card-width, 272px);
     flex-shrink: 0;
   }
@@ -40,12 +40,12 @@
     cursor: pointer;
     overscroll-behavior: none;
 
-    @include onTablet {
+    @include on-tablet {
       margin-bottom: 32px;
       height: 196px;
     }
 
-    @include imageHoverScale
+    @include image-hover-scale
   }
 
   &__image {
@@ -190,11 +190,11 @@
 .card.cardFullWidth {
   width: 100%;
 
-  @include onTablet {
+  @include on-tablet {
     width: 100%;
   }
 
-  @include onDesktop {
+  @include on-desktop {
     width: 100%;
   }
 }

@@ -234,7 +234,9 @@ export const ProductsPage = () => {
                   >
                     <button
                       type="button"
-                      className={sort === 'age' ? styles.active : ''}
+                      className={`${styles.products_page__filters__text__dropdown__menu__option} ${
+                        sort === 'age' ? styles.active : ''
+                      }`}
                       onClick={() => {
                         updateSearchParams('age', perPage, 1);
                         setIsSortOpen(false);
@@ -245,7 +247,9 @@ export const ProductsPage = () => {
 
                     <button
                       type="button"
-                      className={sort === 'title' ? styles.active : ''}
+                      className={`${styles.products_page__filters__text__dropdown__menu__option} ${
+                        sort === 'title' ? styles.active : ''
+                      }`}
                       onClick={() => {
                         updateSearchParams('title', perPage, 1);
                         setIsSortOpen(false);
@@ -256,7 +260,9 @@ export const ProductsPage = () => {
 
                     <button
                       type="button"
-                      className={sort === 'price' ? styles.active : ''}
+                      className={`${styles.products_page__filters__text__dropdown__menu__option} ${
+                        sort === 'price' ? styles.active : ''
+                      }`}
                       onClick={() => {
                         updateSearchParams('price', perPage, 1);
                         setIsSortOpen(false);
@@ -305,7 +311,7 @@ export const ProductsPage = () => {
                   >
                     <button
                       type="button"
-                      className={perPage === '4' ? styles.active : ''}
+                      className={`${styles.products_page__filters__number__dropdown__menu__option} ${perPage === '4' ? styles.active : ''}`}
                       onClick={() => {
                         updateSearchParams(sort, '4', 1);
                         setIsPerPageOpen(false);
@@ -316,7 +322,7 @@ export const ProductsPage = () => {
 
                     <button
                       type="button"
-                      className={perPage === '8' ? styles.active : ''}
+                      className={`${styles.products_page__filters__number__dropdown__menu__option} ${perPage === '8' ? styles.active : ''}`}
                       onClick={() => {
                         updateSearchParams(sort, '8', 1);
                         setIsPerPageOpen(false);
@@ -327,7 +333,9 @@ export const ProductsPage = () => {
 
                     <button
                       type="button"
-                      className={perPage === '16' ? styles.active : ''}
+                      className={`${styles.products_page__filters__number__dropdown__menu__option} ${
+                        perPage === '16' ? styles.active : ''
+                      }`}
                       onClick={() => {
                         updateSearchParams(sort, '16', 1);
                         setIsPerPageOpen(false);
@@ -338,7 +346,7 @@ export const ProductsPage = () => {
 
                     <button
                       type="button"
-                      className={perPage === 'all' ? styles.active : ''}
+                      className={`${styles.products_page__filters__number__dropdown__menu__option} ${perPage === 'all' ? styles.active : ''}`}
                       onClick={() => {
                         updateSearchParams(sort, 'all', 1);
                         setIsPerPageOpen(false);
@@ -382,9 +390,7 @@ export const ProductsPage = () => {
                     <button
                       type="button"
                       key={page}
-                      className={
-                        currentPage === page ? styles.pagination_active : ''
-                      }
+                      className={`${styles.products_page__pagination__pages__option} ${currentPage === page ? styles.pagination_active : ''}`}
                       onClick={() => changePage(page)}
                     >
                       {page}

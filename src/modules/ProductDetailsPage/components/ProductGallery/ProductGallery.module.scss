@@ -11,7 +11,7 @@
     flex-direction: column;
     gap: 16px;
 
-    @include onTablet {
+    @include on-tablet {
       flex-direction: row;
       gap: 16px;
       align-items: flex-start;
@@ -25,7 +25,7 @@
     line-height: 140%;
     margin: 0 0 32px;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 32px;
       line-height: 41px;
       letter-spacing: -1%;
@@ -37,13 +37,13 @@
     height: 288px;
     object-fit: contain;
 
-    @include onTablet {
+    @include on-tablet {
       min-width: 0;
       order: 2;
       flex: 1;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       height: 464px;
     }
   }
@@ -52,7 +52,7 @@
     display: flex;
     gap: 8px;
 
-    @include onTablet {
+    @include on-tablet {
       flex-direction: column;
       order: 1;
       flex-shrink: 0;
@@ -81,12 +81,12 @@
         border-color: $white-text-color;
       }
 
-      @include onTablet {
+      @include on-tablet {
         width: 35px;
         height: 35px;
       }
 
-      @include onDesktop {
+      @include on-desktop {
         width: 80px;
         height: 80px;
       }

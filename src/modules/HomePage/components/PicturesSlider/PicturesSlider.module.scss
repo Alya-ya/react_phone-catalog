@@ -7,8 +7,8 @@
   margin: 0;
   padding: 0;
 
-  @include onDesktop {
-    @include contentMaxWidth;
+  @include on-desktop {
+    @include content-max-width;
   }
 
   &__title {
@@ -20,7 +20,7 @@
     color: $white-text-color;
     text-align: center;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 48px;
       line-height: 56px;
       text-align: left;
@@ -28,7 +28,7 @@
       padding-inline: 24px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       padding-inline: 32px;
     }
   }
@@ -38,12 +38,12 @@
     flex-direction: column;
 
 
-    @include onTablet {
+    @include on-tablet {
       flex-direction: row;
       padding-inline: 24px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       padding-inline: 32px;
     }
 
@@ -56,8 +56,7 @@
         background-color: $color-pictures-light-grey;
       }
 
-      @include onTablet {
-        display: flex;
+      @include on-tablet {
         flex-direction: column;
         background-color: $main-button-gray-color;
         border: none;
@@ -73,7 +72,7 @@
         display: none;
 
 
-        @include onTablet {
+        @include on-tablet {
           display: flex;
           filter: brightness(0) invert(1);
         }
@@ -109,13 +108,11 @@
         background-color: $main-button-green-color;
       }
 
-      @include onTablet {
+      @include on-tablet {
         font-size: 24px;
         bottom: 30px;
         left: 60px;
       }
-
-
     }
 
     &__slide {
@@ -124,13 +121,13 @@
       height: 320px;
       overflow: hidden;
 
-      @include onTablet {
+      @include on-tablet {
         height: 400px;
         padding-inline: 20px;
         flex: 1;
       }
 
-      @include onDesktop {
+      @include on-desktop {
         padding-inline: 16px;
       }
 
@@ -142,13 +139,11 @@
         cursor: pointer;
 
         &:hover {
-          @include imageHoverScale;
+          @include image-hover-scale;
         }
       }
     }
   }
-
-
 
   &__indicators {
     display: flex;
@@ -175,7 +170,5 @@
         color: $white-text-color;
       }
     }
-
-    @include onTablet {}
   }
 }

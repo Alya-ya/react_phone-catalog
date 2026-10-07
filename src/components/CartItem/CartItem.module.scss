@@ -11,7 +11,7 @@
   box-sizing: border-box;
 
 
-  @include onTablet {
+  @include on-tablet {
     padding: 24px;
     flex-direction: row;
     align-items: center;
@@ -52,7 +52,7 @@
       object-fit: contain;
       flex-shrink: 0;
 
-      @include imageHoverScale;
+      @include image-hover-scale;
     }
 
     &__text_title {
@@ -75,12 +75,11 @@
     display: flex;
     padding-top: 23px;
 
-    @include onTablet {
+    @include on-tablet {
       margin-left: auto;
     }
 
     &__minus {
-      border: none;
       padding: 0;
       background: none;
       width: 32px;
@@ -142,12 +141,9 @@
       font-weight: 800;
       font-size: 22px;
       line-height: 140%;
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-right: 0;
-      margin-left: auto;
+      margin: 0 0 0 auto;
 
-      @include onTablet {
+      @include on-tablet {
         margin-left: 53px;
       }
     }

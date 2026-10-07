@@ -6,11 +6,11 @@
   flex-direction: column;
   margin-top: 56px;
 
-  @include onTablet {
+  @include on-tablet {
     margin-top: 64px;
   }
 
-  @include onDesktop {
+  @include on-desktop {
     margin-top: 80px;
     max-width: 512px;
   }
@@ -24,7 +24,7 @@
     margin-bottom: 30px;
     border-bottom: 1px solid #3b3e4a;
 
-    @include onTablet {
+    @include on-tablet {
       font-weight: 800;
       font-size: 22px;
       line-height: 140%;

@@ -5,22 +5,25 @@
   --card-width: 212px;
   --card-gap: 16px;
 
-  @include contentMaxWidth;
-  @include pageGrid;
+  @include content-max-width;
+  @include page-grid;
+
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
   padding-left: 16px;
 
-  @include onTablet {
+  @include on-tablet {
     --card-width: 237px;
+
     padding-left: 24px;
     padding-right: 0;
     max-width: 100%;
   }
 
-  @include onDesktop {
-    @include contentMaxWidth;
+  @include on-desktop {
+    @include content-max-width;
+
     --card-width: calc((100% - 48px) / 4);
   }
 
@@ -39,7 +42,7 @@
     color: $white-text-color;
     margin: 0;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 32px;
       line-height: 41px;
       letter-spacing: -0.01em;
@@ -51,11 +54,11 @@
     gap: 16px;
     padding-right: 16px;
 
-    @include onTablet {
+    @include on-tablet {
       padding-right: 24px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       padding-right: 0;
     }
   }

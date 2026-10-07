@@ -60,7 +60,7 @@
       background-color: $main-button-green-color;
     }
 
-    @include onTablet {
+    @include on-tablet {
       max-width: 263px;
     }
   }

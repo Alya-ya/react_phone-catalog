@@ -4,18 +4,18 @@
 .homePage {
   padding-bottom: 64px;
 
-  @include onDesktop {
+  @include on-desktop {
     padding-bottom: 80px;
   }
 
   &__section {
     margin-bottom: 56px;
 
-    @include onTablet {
+    @include on-tablet {
       margin-bottom: 64px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       margin-bottom: 80px;
     }
 

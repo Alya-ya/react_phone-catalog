@@ -10,7 +10,7 @@
   box-sizing: border-box;
   background-color: $main-background-color;
 
-  @include onDesktop {
+  @include on-desktop {
     height: 64px;
   }
 
@@ -29,17 +29,18 @@
     padding-inline: 16px;
     height: 100%;
     margin: 0;
-    @include contentMaxWidth;
 
-    @include onTablet {
+    @include content-max-width;
+
+    @include on-tablet {
       gap: 32px;
       padding-right: 0;
-          margin: 0;
+      margin: 0;
 
     }
 
-    @include onDesktop {
-          margin: 0;
+    @include on-desktop {
+      margin: 0;
       gap: 64px;
     }
   }
@@ -50,9 +51,9 @@
     cursor: pointer;
     display: block;
 
-    @include imageHoverScale;
+    @include image-hover-scale;
 
-    @include onDesktop {
+    @include on-desktop {
       width: 80px;
       height: 28px;
     }
@@ -61,7 +62,7 @@
   &__links {
     display: none;
 
-    @include onTablet {
+    @include on-tablet {
       display: flex;
       gap: 32px;
       font-family: $main-text-font-family;
@@ -73,14 +74,13 @@
       height: 100%;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       gap: 48px;
     }
   }
 
   &__link {
-
-    @include onTablet {
+    @include on-tablet {
       text-decoration: none;
       color: $main-text-color;
       cursor: pointer;
@@ -89,6 +89,7 @@
       height: 100%;
       position: relative;
       transition: color 0.3s ease;
+
       @include hover(color, $white-text-color);
 
       &::after {
@@ -131,7 +132,7 @@
     display: none;
     position: relative;
 
-    @include onTablet {
+    @include on-tablet {
       display: flex;
       width: 48px;
       height: 100%;
@@ -150,7 +151,7 @@
       }
     }
 
-    @include onDesktop {
+    @include on-desktop {
       width: 64px;
     }
   }
@@ -176,7 +177,7 @@
       object-fit: contain;
     }
 
-    @include onTablet {
+    @include on-tablet {
       display: none;
     }
   }
@@ -208,7 +209,7 @@
     display: flex;
   }
 
-  @include onTablet {
+  @include on-tablet {
     display: none !important;
   }
 
@@ -235,7 +236,7 @@
     height: 22px;
     object-fit: contain;
 
-    @include imageHoverScale
+    @include image-hover-scale
   }
 
   &__close {
@@ -362,7 +363,7 @@
   border: 1px solid $main-background-color;
 
   background-color: $main-text-color-red;
-  color: #ffffff;
+  color: #fff;
 
   font-family: $main-text-font-family;
   font-size: 9px;

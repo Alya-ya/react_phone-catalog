@@ -4,9 +4,9 @@
 .product_options {
   display: flex;
   flex-direction: column;
-  margin: 40px 0 0 0;
+  margin: 40px 0 0;
 
-  @include onTablet {
+  @include on-tablet {
     padding-top: 40px;
   }
 
@@ -42,10 +42,9 @@
     padding-bottom: 24px;
     border-bottom: 1px solid #3B3E4A;
 
-    @include onTablet {
+    @include on-tablet {
       max-width: 320px;
     }
-
 
     &__link {
       display: block;
@@ -62,10 +61,8 @@
       }
 
       &--active {
-        border-color: transparent;
         border: 1px solid $main-text-color;
       }
-
     }
   }
 
@@ -76,7 +73,7 @@
     padding: 24px 0;
     border-bottom: 1px solid #3b3e4a;
 
-    @include onTablet {
+    @include on-tablet {
       max-width: 320px;
     }
 

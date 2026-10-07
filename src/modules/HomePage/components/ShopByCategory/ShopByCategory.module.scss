@@ -7,12 +7,12 @@
   display: block;
   padding-inline: 1rem;
 
-  @include onTablet {
+  @include on-tablet {
     padding-inline: 24px;
   }
 
-  @include onDesktop {
-    @include contentMaxWidth;
+  @include on-desktop {
+    @include content-max-width;
   }
 
   &__title {
@@ -26,7 +26,7 @@
     letter-spacing: 0%;
     color: $white-text-color;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 32px;
       line-height: 41px;
       letter-spacing: -1%;
@@ -38,8 +38,9 @@
     flex-direction: column;
     gap: 32px;
 
-    @include onTablet {
-      @include pageGrid;
+    @include on-tablet {
+      @include page-grid;
+
       gap: 16px;
     }
   }
@@ -58,11 +59,11 @@
     flex-direction: column;
     cursor: pointer;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: span 4;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: span 8;
     }
 
@@ -91,7 +92,7 @@
       height: 100%;
       object-fit: contain;
 
-      @include imageHoverScale;
+      @include image-hover-scale;
 
       &__phones {
         object-position: 100px 50px;

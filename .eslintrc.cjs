@@ -124,6 +124,11 @@ module.exports = {
   },
   ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts', 'src/vite-env.d.ts', 'cypress', 'cypress.config.ts'],
   settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      },
+    },
     react: {
       version: 'detect',
     },
