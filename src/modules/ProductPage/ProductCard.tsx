@@ -11,9 +11,14 @@ import classNames from 'classnames';
 type Props = {
   product: Product;
   showFullPrice?: boolean;
+  fullWidth?: boolean;
 };
 
-export const ProductCard: React.FC<Props> = ({ product, showFullPrice }) => {
+export const ProductCard: React.FC<Props> = ({
+  product,
+  showFullPrice,
+  fullWidth,
+}) => {
   const { name, price, fullPrice, screen, capacity, ram, itemId, id } = product;
   const { cart, addToCart, removeFromCart } = useCart();
   const isInCart = cart.some(item => item.id === id);
@@ -59,7 +64,11 @@ export const ProductCard: React.FC<Props> = ({ product, showFullPrice }) => {
   };
 
   return (
-    <div className={styles.card}>
+    <div
+      className={classNames(styles.card, {
+        [styles.cardFullWidth]: fullWidth,
+      })}
+    >
       <Link to={`/product/${itemId}`} className={styles.card__imageContainer}>
         <img
           src={`/${product.image}`}

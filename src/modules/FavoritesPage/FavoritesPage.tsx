@@ -16,22 +16,24 @@ export const FavoritesPage = () => {
 
   return (
     <section className={styles.favorites_page}>
-      <div className={styles.favorites_page__breadcrumbs}>
+      <div className={styles.favorites_page__box}>
         <Link to="/">
           <img
-            className={styles.favorites_page__home}
+            className={styles.favorites_page__box__home}
             src="/img/icons/home.svg"
             alt="Home"
           />
         </Link>
 
         <img
-          className={styles.favorites_page__arrow}
+          className={styles.favorites_page__box__arrow}
           src="/img/icons/right.svg"
           alt=""
         />
 
-        <span className={styles.favorites_page__breadcrumb}>Favourites</span>
+        <span className={styles.favorites_page__box__breadcrumb}>
+          Favourites
+        </span>
       </div>
 
       <div className={styles.favorites_page__title}>

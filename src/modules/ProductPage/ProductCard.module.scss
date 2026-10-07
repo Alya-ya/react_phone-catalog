@@ -186,3 +186,15 @@
     }
   }
 }
+
+.card.cardFullWidth {
+  width: 100%;
+
+  @include onTablet {
+    width: 100%;
+  }
+
+  @include onDesktop {
+    width: 100%;
+  }
+}

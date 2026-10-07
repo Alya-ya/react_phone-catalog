@@ -63,7 +63,11 @@ export const ProductDetailsPage = () => {
 
   const product = products.find(pr => pr.itemId === productId);
 
-  if (!product) {
+  const productDetails = product
+    ? allProductsDetails.find(item => item.id === product.itemId)
+    : undefined;
+
+  if (!product || !productDetails) {
     return (
       <section className={styles.product_not_found}>
         <h1 className={styles.product_not_found__title}>
@@ -77,14 +81,6 @@ export const ProductDetailsPage = () => {
         />
       </section>
     );
-  }
-
-  const productDetails = allProductsDetails.find(
-    item => item.id === product.itemId,
-  );
-
-  if (!productDetails) {
-    return null;
   }
 
   const screen = productDetails.screen ?? product.screen;
@@ -193,7 +189,7 @@ export const ProductDetailsPage = () => {
       </div>
 
       <div className={styles.product_details_page__top}>
-        <ProductGallery image={product.image} name={product.name} />
+        <ProductGallery image={`/${product.image}`} name={product.name} />
 
         <div className={styles.product_details_page__info}>
           <ProductOptions

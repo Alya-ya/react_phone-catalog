@@ -10,7 +10,7 @@ export const ProductsList: React.FC<ProductsListProps> = ({ products }) => {
   return (
     <section className={styles.products_list}>
       {products.map(product => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.id} product={product} fullWidth />
       ))}
     </section>
   );

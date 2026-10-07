@@ -4,15 +4,17 @@
 .products_list {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(1, 287px);
+  justify-content: center;
+  grid-template-columns: 1fr;
   column-gap: 16px;
   row-gap: 40px;
 
+
   @include onTablet {
-    grid-template-columns: repeat(2, 287px);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include onDesktop {
-    grid-template-columns: repeat(4, 272px);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
